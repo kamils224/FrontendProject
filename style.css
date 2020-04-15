@@ -1,0 +1,224 @@
+html, body{
+    height: 100%;
+}
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+ul{
+    padding: 0;
+}
+header{
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+
+/*arrow*/
+.arrow {
+    border: solid green;
+    border-width: 0 25px 25px 0;
+    display: inline-block;
+    padding: 25px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+.container{
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: auto;
+}
+.title{
+    font-weight: normal;
+    font-size: 2.1em;
+    color: rgb(50, 50, 50);
+    margin-top: 60px;
+}
+
+.text-white{
+    color: white;
+}
+
+.center-image{
+    display: block;
+    margin: auto;
+    padding-top: 25px;
+}
+.center-text{
+    text-align: center;
+}
+.m-small{
+    margin: 10px;
+}
+.m-medium{
+    margin: 20px;
+}
+.m-large{
+    margin: 30px;
+}
+.mb-small{
+    margin-bottom: 10px;
+}
+.mb-medium{
+    margin-bottom: 20px;
+}
+.mb-large{
+    margin-bottom: 30px;
+}
+
+/*TOP*/
+#top_page{
+    height: 100%;
+    max-height: 330px;
+}
+#main_navigation{
+    width: 100%;
+    margin: 0;
+    padding-top: 50px;
+}
+.menu-items{
+    list-style: none;
+}
+
+.menu-items li{
+    width: auto;
+    margin: 0 20px;
+    float: left;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.menu-items li:first-child{
+    margin-left: 0;
+}
+.menu-items li:last-child{
+    margin-right: 0;
+}
+
+.menu-items a{
+    text-decoration: none;
+    color:  rgb(50, 50, 50);
+}
+.menu-items a:hover{
+    color:  green;
+}
+
+.menu-items a:visited{
+    text-decoration: none;
+}
+
+/*MENU*/
+#menu_page{
+    width: 100%;
+    height:auto;
+    max-height: 750px;
+    background: url("images/golf_main.jpg") no-repeat center;
+    background-size: cover;
+    clear: both;
+}
+
+#secondary_navigation{
+    padding-top: 20%; 
+    padding-bottom: 20%;  
+}
+
+.secondary-menu-items{
+    list-style: none;
+}
+.secondary-menu-items li{
+    margin: 15px 0;
+}
+
+.secondary-menu-items a{
+    text-decoration: none;
+    color:  white;
+}
+.secondary-menu-items a:hover{
+    background-color:  rgba(255, 255, 255, 0.2);
+}
+
+.secondary-menu-items a:visited{
+    text-decoration: none;
+}
+
+.menu-border{
+    border-bottom: 1px solid white;
+    margin-top: 10px;
+    width: 18%
+}
+
+/*NEWS*/
+
+#news_page{
+    width: 100%;
+    height:auto;
+    background: white;
+    clear: both;
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 30% auto;
+}
+
+.grid-item {
+    border-bottom: 1px solid rgb(50, 50, 50);
+    text-align: justify;
+    color: rgb(50, 50, 50);
+    font-size: 1.1em;
+}
+
+.content-box{
+    margin-right: 40px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.article-link{
+    color: green;
+    float: right;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+.article-link:hover{
+    color: indigo;
+}
+
+.article-link:visited{
+    text-decoration: none;
+}
+
+
+/*SCHEDULE*/
+#schedule{
+    width: 100%;
+    height: auto;
+    background: url("images/tournament.jpg") no-repeat center;
+    max-height: 750px;
+    clear: both;
+}
