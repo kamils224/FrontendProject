@@ -132,7 +132,7 @@ p {
 
 .menu-items a{
     text-decoration: none;
-    color:  rgb(50, 50, 50);
+    color:  black;
 }
 .menu-items a:hover{
     color:  green;
