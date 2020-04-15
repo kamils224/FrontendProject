@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golf</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header id="top_page">
-        <img class="center-image" src="images/logo.PNG" alt="logo">
+        <img class="logo center-image" src="images/logo.jpg" alt="logo">
         <div class="container">
             <nav id="main_navigation">
                 <ul class="menu-items">
@@ -20,6 +22,7 @@
                     <li><a href="#">ABC GOLFA</a></li>
                     <li><a href="#">KONTAKT</a></li>
                 </ul>
+                <p onclick="showMenu()" class="show_menu">MENU</p>
             </nav>
         </div>
     </header>
@@ -147,8 +150,40 @@
         <div class="container">
             <h2 class="title center-text text-white">AKTUALNOŚCI</h2>
             <h2 class="title text-white">KALENDARZ TURNIEJÓW 2018</h2>
-            <p>asldaskdaksdlkasjdaskljdaskldalksj</p>
+            <div class="flex-container">
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+                <div>asd</div>
+            </div>
         </div>
     </header>
+
+    <script>
+        var isMenuActive = false;
+        var elem = document.getElementById("main_navigation");
+        function showMenu() {
+            if (isMenuActive == false){
+                elem.style.marginTop = "0px";
+                isMenuActive=true;
+            }else{
+                elem.style.marginTop = "-300px";
+                console.log(elem.style.marginTop);
+                isMenuActive=false;
+            }
+            
+        }
+    </script>
+
+
 </body>
 </html>
