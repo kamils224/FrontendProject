@@ -17,33 +17,6 @@ p {
     margin: 0;
 }
 
-/*arrow*/
-.arrow {
-    border: solid green;
-    border-width: 0 25px 25px 0;
-    display: inline-block;
-    padding: 25px;
-  }
-  
-  .right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-  }
-  
-  .left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-  }
-  
-  .up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-  }
-  
-  .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
 
 .container{
     max-width: 1000px;
@@ -56,11 +29,14 @@ p {
     font-weight: normal;
     font-size: 2.1em;
     color: rgb(50, 50, 50);
-    margin-top: 60px;
+    margin-top: 10%;
 }
 
 .text-white{
     color: white;
+}
+.text-bold{
+    font-weight: bold;
 }
 
 .logo{
@@ -93,6 +69,10 @@ p {
 }
 .mb-large{
     margin-bottom: 30px;
+}
+
+.padding-large{
+    padding: 30px;
 }
 
 /*NAVIGATION*/
@@ -159,6 +139,7 @@ p {
 
 .secondary-menu-items{
     list-style: none;
+    padding-top: 5%;
 }
 .secondary-menu-items li{
     margin: 15px 0;
@@ -200,12 +181,12 @@ p {
 
 .grid-item {
     border-bottom: 1px solid rgb(50, 50, 50);
-    text-align: justify;
+    text-align: left;
     color: rgb(50, 50, 50);
     font-size: 1.1em;
 }
 
-.content-box{
+.grid-content{
     margin-right: 40px;
     margin-left: 15px;
     margin-top: 15px;
@@ -232,22 +213,32 @@ p {
     width: 100%;
     height: auto;
     background: url("images/tournament.jpg") no-repeat center;
-    max-height: 750px;
+    min-height: 1280px;
     clear: both;
+    margin-top: 5%;
 }
 
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    background-color: DodgerBlue;
+    max-width: 1280px;
 }
   
 .flex-container > div {
-    background-color: #f1f1f1;
-    width: 100px;
-    min-width: 0;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
+    background-color: rgba(50, 50, 50, 0.3);
+    width: 40%;
+    min-width: 300px;
+    text-align: left;
+    line-height: 50px;
     font-size: 1.2em;
+}
+
+.content-box{
+    padding: 5%;
+}
+
+.content-box p {
+    padding: 0;
+    line-height: 40px;
+    color: white;
 }
