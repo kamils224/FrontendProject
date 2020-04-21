@@ -86,6 +86,11 @@ p {
     line-height: normal;
 }
 
+.content-text li{
+    font-size: 1em;
+    line-height: 1.5;
+}
+
 
 .padding-large{
     padding: 30px;
@@ -241,18 +246,26 @@ p {
 }
   
 .flex-container > div {
-    width: 40%;
+    width: 45%;
     min-width: 300px;
     text-align: left;
     line-height: 200%;
+    margin: 2.5%;
+
+}
+.flex-container > div:nth-child(even){
+    margin-left: 5%;
+    margin-right: 0;
+}
+.flex-container > div:nth-child(odd){
+    margin-left: 0;
+    margin-right: 5%;
 }
 
-.semi-transparent{
-    background-color: rgba(50, 50, 50, 0.3);
-}
+
 
 .content-box{
-    padding: 5%;
+    margin: 5%;
 }
 
 .content-box p {
@@ -269,5 +282,14 @@ p {
 
 #accommodation{
     min-height: 1080px;
-    background-color: rgb(52, 158, 149);
+    background-color: rgb(25, 121, 135);
+}
+
+.content-list{
+    margin: 5%;
+}
+
+.content-image{
+    max-width: 100%;
+    height: auto;
 }
