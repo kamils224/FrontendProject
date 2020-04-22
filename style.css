@@ -196,7 +196,7 @@ p {
 }
 
 
-.grid-container{
+.grid-container-news{
     display: grid;
     grid-template-columns: 30% auto;
 }
@@ -292,4 +292,32 @@ p {
 .content-image{
     max-width: 100%;
     height: auto;
+}
+
+/*ACADEMY*/
+#academy{
+    min-height: 1080px;
+    background-color: rgb(197, 222, 232);
+}
+
+.grid-table-3{
+    display: grid;
+    grid-template-columns: 33.33% auto 33.33%;
+    grid-template-rows: auto 33.33% 33.33%;
+    height: auto;
+
+}
+.grid-table-item{
+    border-bottom: 1px solid black;
+}
+.grid-table-item p{
+    font-size: 1.5em;
+    color: rgb(50, 50, 50);
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+
+.bottom-line{
+    border-bottom: 1px solid black;
 }
