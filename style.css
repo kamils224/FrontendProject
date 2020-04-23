@@ -40,6 +40,7 @@ p {
 
 .text-white{
     color: white;
+    text-shadow: 1px 1px black;
 }
 .text-bold{
     font-weight: bold;
@@ -77,17 +78,29 @@ p {
     margin-bottom: 30px;
 }
 
+.mt-small{
+    margin-top: 10px;
+}
+.mt-medium{
+    margin-top: 20px;
+}
+.mt-large{
+    margin-top: 30px;
+}
+.font-large p{
+    font-size: 1.4em;
+}
 .font-medium p{
     font-size: 1.2em;
 }
-
+.font-small p{
+    font-size: 0.8em;
+}
 .content-text p{
-    font-size: 1em;
     line-height: normal;
 }
 
 .content-text li{
-    font-size: 1em;
     line-height: 1.5;
 }
 
@@ -169,6 +182,7 @@ p {
 .secondary-menu-items a{
     text-decoration: none;
     color:  white;
+    text-shadow: 1px 1px black;
 }
 .secondary-menu-items a:hover{
     background-color:  rgba(255, 255, 255, 0.2);
@@ -296,7 +310,7 @@ p {
 
 /*ACADEMY*/
 #academy{
-    min-height: 1080px;
+    min-height: 1000px;
     background-color: rgb(197, 222, 232);
 }
 
@@ -317,7 +331,24 @@ p {
     margin-top: 5%;
 }
 
-
 .bottom-line{
     border-bottom: 1px solid black;
+}
+
+#field_image{
+    margin-top: -350px;
+}
+
+/*ABC GOLFA*/
+#abc_golfa{
+    background: url("images/abc_image.jpg") no-repeat center;
+    background-size: cover;
+    clear: both;
+    margin-top: 7%;
+    min-height: 800px;
+    width: 100%;
+}
+
+.description-text p{
+    margin-top: 5%;    
 }
