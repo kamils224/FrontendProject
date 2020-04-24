@@ -25,6 +25,13 @@ p {
     padding: 0;
     overflow: auto;
 }
+.contact-container{
+    max-width: 1100px;
+    width: auto;
+    margin: 0 auto;
+    padding: 0;
+    overflow: auto;
+}
 .title{
     font-weight: normal;
     font-size: 2.1em;
@@ -351,4 +358,48 @@ p {
 
 .description-text p{
     margin-top: 5%;    
+}
+
+/*CONTACT*/
+#contact{
+    min-height: 850px;
+    margin-bottom: 5%;
+}
+
+/*FOOTER*/
+#footer{
+    min-height: 200px;
+    background-color: rgb(70, 70, 70);;
+}
+.footer-items{
+    list-style: none;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-items li{
+    vertical-align: middle;
+    float: left;
+    max-width: 200px;
+    text-align: center;
+    font-size: 1.1em;
+    color: rgb(50, 50, 50);
+    margin: 0 15px;
+}
+.footer-items a{
+    text-decoration: none;
+    color:  rgb(200, 200, 200);
+}
+.footer-items a:hover{
+    color:  white;
+}
+.footer-items a:visited{
+    text-decoration: none;
+}
+
+.footer-logo{
+    width: 100%;
+    height: auto;
+    vertical-align: baseline;
 }
