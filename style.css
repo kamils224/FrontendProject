@@ -17,7 +17,6 @@ p {
     margin: 0;
 }
 
-
 .container{
     max-width: 1000px;
     width: auto;
@@ -110,7 +109,6 @@ p {
 .content-text li{
     line-height: 1.5;
 }
-
 
 .padding-large{
     padding: 30px;
@@ -283,8 +281,6 @@ p {
     margin-right: 5%;
 }
 
-
-
 .content-box{
     margin: 5%;
 }
@@ -403,3 +399,148 @@ p {
     height: auto;
     vertical-align: baseline;
 }
+
+@media screen and (max-width: 1024px){
+
+    #top_page{
+        max-height: 500px;
+    }
+    .container{
+        max-width: 100%;
+    }
+    
+    /*NAVIGATION*/
+    
+    #main_navigation{
+        padding: 0;
+    }
+    
+    .menu-items{
+        width: auto;
+        margin: 0;
+    }
+    
+    .menu-items li{
+        width: 100%;
+        float: none;
+        padding: 10px 0;
+        margin: 0;
+        background: white;
+        z-index: 2;
+        position: relative;
+        font-size: 1.5em;
+    }
+    
+    .menu-items a{
+        color: black;
+    }
+    
+    .show_menu{
+        display: block;
+        padding: 10px;
+        background-color: rgb(50, 50, 50);
+        color: white;
+        text-align: center;
+        font-size: 1.3em;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    #secondary_navigation{
+        padding-top: 10%; 
+        padding-bottom: 10%;
+    }
+    
+    .secondary-menu-items{
+        padding-left: 10%;
+        font-size: 1.3em;
+    }
+    
+    .menu-border{
+        padding-left: 10%;
+    }
+    
+    .title{
+        text-align: center;
+    }
+    .subtitle{
+        font-size: 1.2em;
+    }
+    
+    .flex-container > div{
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .flex-container > div:nth-child(even){
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .flex-container > div:nth-child(odd){
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    
+    /*NEWS*/
+    .grid-container-news{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    
+    .grid-item {
+        border-bottom: none;
+        text-align: left;
+        color: rgb(50, 50, 50);
+    
+    }
+    
+    .grid-item:nth-child(even){
+        border-bottom: 1px solid rgb(50, 50, 50);
+        margin: 0;
+    }
+    
+    /*ACCOMODATION*/
+    
+    .content-image{
+        max-width: 90%;
+    }
+    
+    .content-box p{
+        margin-right: 5%;
+    }
+    .description-text p{
+        margin-left: 2%;    
+        margin-right: 2%;    
+    }
+    
+    /*ACADEMY*/
+    
+    .grid-table-item p{
+        font-size: 1.2em;
+    }
+    
+    /*FOOTER*/
+    
+    .footer-items{
+        list-style: none;
+        min-height: 150px;
+        display: block;
+    }
+    
+    .footer-items li{
+        float: none;
+        max-width: 200px;
+        text-align: center;
+        font-size: 1.3em;
+        color: rgb(50, 50, 50);
+        margin: 15px auto;
+    
+    }
+    
+    .footer-logo{
+        display: none;
+    }
+    
+    }
