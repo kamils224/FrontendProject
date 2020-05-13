@@ -1,0 +1,91 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="nodeTodo">
+
+        <head>
+                <!-- META -->
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+                <title>TODO LIST</title>
+
+                <!-- SCROLLS -->
+                <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <link rel="stylesheet" href="main.css">
+                <style>
+                        html                                         { overflow-y:scroll; }
+                body                                         { padding-top:50px; }
+                #todo-list                                 { margin-bottom:30px; }
+                #todo-form                                  { margin-bottom:50px; }
+        </style>
+
+                <!-- SPELLS -->
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+                <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+                <script src="core.js"></script>
+
+        </head>
+        <!-- SET THE CONTROLLER AND GET ALL TODOS WITH INITIALIZE FUNCTION -->
+
+        <body ng-controller="mainController">
+                <div class="container">
+
+                        <!-- HEADER AND TODO COUNT -->
+                        <div class="jumbotron text-center">
+                                <h1>{{ title }} <span class="label label-info">{{ todos.length }}</span></h1>
+                        </div>
+                        <div class="row tabs-box">
+                                <div class="col-md-6 col-md-offset-4">
+                                  <button class="tab btn btn-primary" ng-click="selectTasks('all')">Wszystkie</button>
+                                  <button class="tab btn btn-warning" ng-click="selectTasks('todo')">Do zrobienia</button>
+                                  <button class="tab btn btn-success" ng-click="selectTasks('done')">Zrobione</button>
+                                </div>     
+                              </div>                          
+                        </div>
+                        <!-- TODO LIST -->
+                        <div id="todo-list" class="row">
+                                <div class="col-md-6 col-md-offset-4">
+
+                                        <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                                        <div class="checkbox" ng-repeat="todo in todos">                                         
+                                                <label ng-init="editing=false" ng-hide="editing" ng-model="todo.text">       
+                                                <input type="checkbox" ng-click="updateTodo(todo._id)" ng-model="todo.done"/>                              
+                                                {{todo.text}}
+                                                </label>
+                                                <input type="text" ng-show="editing" ng-model="todo.text"> 
+                                                <button ng-click="editing=editButton(todo._id, editing)" class="btn btn-secondary">
+                                                        <i class="fa fa-edit" style="color:blue"></i>
+                                                </button>
+                                                <button ng-click="deleteTodo(todo._id)" class="btn btn-secondary">
+                                                        <i  class="fa fa-remove" style="color:red"></i>
+                                                </button>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <!-- FORM TO CREATE TODOS -->
+                        <div id="todo-form" class="row">
+                                <div class="col-sm-8 col-sm-offset-2 text-center">
+                                        <form>
+                                                <div class="form-group">
+
+                                                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                                                        <input type="text" class="form-control input-lg text-center"
+                                                                placeholder="Co jeszcze chcesz zrobić?" ng-model="formData.text">
+                                                </div>
+
+                                                <!-- createToDo() WILL CREATE NEW TODOS -->
+                                                <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Dodaj</button>
+                                        </form>
+                                </div>
+                        </div>
+
+                </div>
+
+
+
+        </body>
+
+</html>
