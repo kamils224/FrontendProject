@@ -5,17 +5,33 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+ //pagination limit
+const limit = 50;
+
 module.exports = {
   list: function(req, res){
-
-    Words.find({}).populate('category').populate('advancement').exec(function(err, words){
+    var page = 1;
+    var pages = 1;
+    if (req.query.page){
+      page = req.query.page
+      if(page < 1){
+        res.send(404, {error: 'Not found'})
+      }
+    }
+    Words.count().exec(function(err, numOfInstances){
       if(err){
         res.send(500, {error: err});
       }
-      res.view('words/list',{words:words});
-  });
-
-
+      pages = Math.ceil(numOfInstances/limit);
+      Words.find({skip: (page-1) * limit, limit : limit}).populate('category').populate('advancement').exec(function(err, words){
+        if(err){
+          res.send(500, {error: err});
+        }
+        var nextUrl = parseInt(page) === pages ? '#' : `/words/list?page=${parseInt(page)+1}`;
+        var previousUrl = parseInt(page) === 1 ? '#' : `/words/list?page=${(page-1)}`;
+        res.view('words/list', {words:words, nextUrl:nextUrl, previousUrl: previousUrl});
+    });
+    })
   },
   add: function(req, res){
     Categories.find({}).exec(function(err,categories){
@@ -86,19 +102,38 @@ module.exports = {
   },
   search: function(req, res){
     var wordName = req.query.word;
+    var page = 1;
+    var pages = 1;
+    if (req.query.page){
+      page = req.query.page
+    }
+    if(page < 1){
+      res.send(404, {error: 'Not found'})
+    }
 
+    Words.count().exec(function(err, numOfInstances){
+      if(err){
+        res.send(500, err);
+      }
+      pages = Math.ceil(numOfInstances/limit);
       Words.find({
         where: {
           or: [
           {nativeWord: {'contains': wordName}},
           {foreignWord: {'contains': wordName}},
-        ]}
+        ]},
+        skip: (page-1) * limit, 
+        limit : limit,
+  
       }).populate('category').populate('advancement').exec(function(err, words){
         if(err){
           res.send(500, {error: err});
         }
-        res.view('words/list',{words:words});
+        var nextUrl = parseInt(page) === pages ? '#' : `/words/search?page=${parseInt(page)+1}&word=${wordName}`;
+        var previousUrl = parseInt(page) === 1 ? '#' : `/words/search?page=${page-1}&word=${wordName}`;
+        res.view('words/list',{words:words, nextUrl:nextUrl, previousUrl: previousUrl});
       });
+    });
   }
 };
 
