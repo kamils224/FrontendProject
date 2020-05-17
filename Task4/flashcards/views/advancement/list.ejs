@@ -1,0 +1,28 @@
+<div class="p-5">
+    <h2 class="display-4">Advancement</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Level</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% advancement.forEach((adv)=>{ %>
+                <tr>
+                    <td><%= adv.id%></td>
+                    <td><%= adv.level%></td>
+                    <td>
+                        <form class="d-inline" action="/advancement/edit/<%= adv.id %>" method="POST">
+                            <input type="submit" class="btn btn-primary" value="Edit">
+                        </form>
+                        <form class="d-inline" action="/advancement/delete/<%= adv.id %>" method="POST">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>

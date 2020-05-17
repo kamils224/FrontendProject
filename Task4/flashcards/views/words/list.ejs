@@ -1,0 +1,34 @@
+<div class="p-5">
+    <h2 class="display-4">Flashcards collection</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>PL</th>
+                <th>ENG</th>
+                <th>Category</th>
+                <th>Level</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% words.forEach((word)=>{ %>
+                <tr>
+                    <td><%= word.id%></td>
+                    <td><%= word.nativeWord%></td>
+                    <td><%= word.foreignWord%></td>
+                    <td><%= word.category.name%></td>
+                    <td><%= word.advancement.level%></td>
+                    <td>
+                        <form class="d-inline" action="/words/edit/<%= word.id %>" method="POST">
+                            <input type="submit" class="btn btn-success" value="Edit">
+                        </form>
+                        <form class="d-inline" action="/words/delete/<%= word.id %>" method="POST">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>

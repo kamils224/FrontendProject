@@ -1,0 +1,16 @@
+<div class="p-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/categories/list">Categories list</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Edit</li>
+        </ol>
+    </nav>
+    <h2 class="display-5">Edit category</h2>
+    <form action="/categories/update/<%= category.id %>" method="POST">
+        <div class="form-group">
+            <label for="categoryName">Category name</label>
+            <input type="text" name="categoryName" class="form-control" value="<%= category.name%>">
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
