@@ -7,21 +7,24 @@
 
 module.exports = {
   list: function(req, res){
+
     Words.find({}).populate('category').populate('advancement').exec(function(err, words){
-        if(err){
-          res.sen(500, {error: err});
-        }
-        res.view('words/list',{words:words});
-    });
+      if(err){
+        res.send(500, {error: err});
+      }
+      res.view('words/list',{words:words});
+  });
+
+
   },
   add: function(req, res){
     Categories.find({}).exec(function(err,categories){
       if(err){
-        res.sen(500, {error: err});
+        res.send(500, {error: err});
       }
       Advancement.find({}).exec(function(err,advancement){
         if(err){
-          res.sen(500, {error: err});
+          res.send(500, {error: err});
         }
         res.view('words/add',{categories: categories, advancement: advancement});
       });
@@ -56,11 +59,11 @@ module.exports = {
         }
         Categories.find({}).exec(function(err,categories){
           if(err){
-            res.sen(500, {error: err});
+            res.send(500, {error: err});
           }
           Advancement.find({}).exec(function(err,advancement){
             if(err){
-              res.sen(500, {error: err});
+              res.send(500, {error: err});
             }
             res.view('words/edit', {word: word, categories: categories, advancement: advancement});
           });
@@ -83,17 +86,19 @@ module.exports = {
   },
   search: function(req, res){
     var wordName = req.query.word;
-    Words.find({
-      or: [
-        {nativeWord: {'contains': wordName}},
-        {foreignWord: {'contains': wordName}}
-      ]
-    }).populate('category').populate('advancement').exec(function(err, words){
-      if(err){
-        res.sen(500, {error: err});
-      }
-      res.view('words/list',{words:words});
-    });
+
+      Words.find({
+        where: {
+          or: [
+          {nativeWord: {'contains': wordName}},
+          {foreignWord: {'contains': wordName}},
+        ]}
+      }).populate('category').populate('advancement').exec(function(err, words){
+        if(err){
+          res.send(500, {error: err});
+        }
+        res.view('words/list',{words:words});
+      });
   }
 };
 

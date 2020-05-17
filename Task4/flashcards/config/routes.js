@@ -20,7 +20,6 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-  'GET /words/delete/:name': {action: 'words/search'},
   'POST /words/delete/:id': {action: 'words/delete'},
   'POST /words/edit/:id': {action: 'words/edit'},
   'POST /words/update/:id': {action: 'words/update'},
