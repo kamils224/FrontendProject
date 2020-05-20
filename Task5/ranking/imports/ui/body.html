@@ -19,10 +19,13 @@
         {{> loginButtons}}
 
         {{#if currentUser}}
-          <form class="new-food">
-              <input type="text" name="text" placeholder="Type to add new food" />
-          </form>
+        <form class="new-food form-inline">
+            <input type="text" name="text" placeholder="Type to add new food" />
+            <input type="file" name="foodImage">
+            <input type="submit" value="Add food" class="btn btn-outline-secondary">
+        </form>
         {{/if}}
+
       </header>
   
       <ul>

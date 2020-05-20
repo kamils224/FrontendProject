@@ -47,12 +47,13 @@ form {
   position: relative;
 }
  
-.new-food input {
+.new-food input[type=text] {
   box-sizing: border-box;
   padding: 10px 0;
   background: transparent;
   border: none;
-  width: 100%;
+  min-width: 30%;
+  width: auto;
   padding-right: 80px;
   font-size: 1em;
 }
@@ -65,15 +66,6 @@ ul {
   margin: 0;
   padding: 0;
   background: white;
-}
- 
-.delete {
-  float: right;
-  font-weight: bold;
-  background: none;
-  font-size: 1em;
-  border: none;
-  position: relative;
 }
  
 li {

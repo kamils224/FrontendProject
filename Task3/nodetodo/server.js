@@ -36,8 +36,14 @@ app.use(cors());
 // api ---------------------------------------------------------------------
 // get all todos
 app.get("/api/todos", function(req, res) {
+  var filter ={};
+  var query = req.query.done;
+  if(query){
+    filter = {done: query};
+  }
+  
   // use mongoose to get all todos in the database
-  Todo.find(function(err, todos) {
+  Todo.find(filter,function(err, todos) {
     // if there is an error retrieving, send the error. nothing after res.send(err) will execute
     if (err) res.send(err);
 
@@ -49,7 +55,7 @@ app.get("/api/todos/:todo_id", function(req, res) {
   // use mongoose to get all todos in the database
   Todo.find(
     {
-      _id: req.params.todo_id
+      _id: req.params.todo_id,
     },
     function(err, todos) {
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute

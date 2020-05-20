@@ -3,7 +3,7 @@ var nodeTodo = angular.module("nodeTodo", []);
 function mainController($scope, $http) {
   $scope.formData = {};
 
-  $scope.title = "Todo List";
+  $scope.title = "";
   $scope.allTodos = []
   $scope.selectedTab = 'all';
 
@@ -20,7 +20,6 @@ function mainController($scope, $http) {
     });
   }();
     
-
   // when submitting the add form, send the text to the node API
   $scope.createTodo = function() {
     $http

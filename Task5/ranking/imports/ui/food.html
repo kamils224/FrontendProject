@@ -7,12 +7,14 @@
       <div class="col-lg-8">
         <p class="text"><strong>Added by: {{username}}</strong> - {{text}}</p>
         <p class="text"><strong>Points: {{points}}</strong></p>
+
+        {{#unless isOwner}}
         <button class="btn vote-up"><i class="fa fa-thumbs-up" style="font-size:48px;color:green"></i></button>
         <button class="btn vote-down"><i class="fa fa-thumbs-down" style="font-size:48px;color:red"></i></button>
-
+        {{/unless}}
         
         {{#if isOwner}}
-        <button class="btn vote-down"><i class="fa fa-remove" style="font-size:48px;color:black"></i></button>
+        <button class="btn delete"><i class="fa fa-remove" style="font-size:48px;color:black">DELETE</i></button>
         {{/if}}
         
       </div>
