@@ -20,9 +20,17 @@ Template.food.events({
     Meteor.call('foods.remove', this._id);
   },
   'click .vote-up'(){
+    if(!Meteor.user()){
+      alert("Log in to vote");
+      return;
+    }
       Meteor.call('foods.voteUp', this._id);
   },
   'click .vote-down'(){
+    if(!Meteor.user()){
+      alert("Log in to vote");
+      return;
+    }
     Meteor.call('foods.voteDown', this._id);
 }
 });
