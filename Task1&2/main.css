@@ -1,5 +1,6 @@
 html, body {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
 }
 
 body {
@@ -161,6 +162,7 @@ p {
   text-align: center;
   font-size: 1.4em;
   color: #323232;
+  z-index: -1;
 }
 
 .menu-items li:first-child {
@@ -188,7 +190,7 @@ p {
 #menu_page {
   width: 100%;
   height: auto;
-  max-height: 750px;
+  min-height: 750px;
   background: url("images/golf_main.jpg") no-repeat center;
   background-size: cover;
   clear: both;
