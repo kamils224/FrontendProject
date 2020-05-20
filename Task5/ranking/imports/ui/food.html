@@ -1,0 +1,23 @@
+<template name="food">
+  <li>
+    <div class="row align-items-center text-center">
+      <div class="col-lg-4">
+        <img src="/images/placeholder.png" alt="placeholder" class="img-thumbnail">
+      </div>
+      <div class="col-lg-8">
+        <p class="text"><strong>Added by: {{username}}</strong> - {{text}}</p>
+        <p class="text"><strong>Points: {{points}}</strong></p>
+        <button class="btn vote-up"><i class="fa fa-thumbs-up" style="font-size:48px;color:green"></i></button>
+        <button class="btn vote-down"><i class="fa fa-thumbs-down" style="font-size:48px;color:red"></i></button>
+
+        
+        {{#if isOwner}}
+        <button class="btn vote-down"><i class="fa fa-remove" style="font-size:48px;color:black"></i></button>
+        {{/if}}
+        
+      </div>
+    </div>
+
+
+    </li>
+  </template>
