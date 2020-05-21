@@ -16,6 +16,7 @@ $page-top:300px;
 $page-top-mobile:100px;
 $menu-hide-value: -570px;
 $section-min-height: 750px;
+$img-clip-top-position: 1566px;
 
 html, body{
     height: auto;
@@ -270,12 +271,45 @@ p {
 
 /*SCHEDULE*/
 #schedule{
+    position: relative;
     width: 100%;
     height: auto;
     background: url("images/tournament.jpg") no-repeat center;
     min-height: 1000px;
     clear: both;
     margin-top: 0;
+    z-index: -10;
+}
+
+.schedule-content{
+    padding-top: 100px;
+}
+
+.schedule-overlay-red{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 115%;
+	width: 100%;
+    z-index: -2;
+    background: rgba(255, 0, 0, 0.3);
+}
+.schedule-overlay-white{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 115%;
+	width: 100%;
+    z-index: -3;
+    background: white;
+}
+
+.schedule-clip-left {
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 74%);
+}
+
+.schedule-clip-right {
+    clip-path: polygon(0 0, 100% 0, 100% 15%, 0 0);
 }
 
 .flex-container {
@@ -521,6 +555,25 @@ p {
         border-bottom: 1px solid rgb(50, 50, 50);
         margin: 0;
     }
+
+    /*SCHEDULE*/
+
+    .schedule-overlay-red{
+        height: 105%;
+    }
+    .schedule-overlay-white{
+        height: 100%;
+
+    }
+
+    .schedule-clip-left {
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 75%);
+    }
+    
+    .schedule-clip-right {
+        clip-path: polygon(0 0, 100% 0, 100% 10%, 0 0);
+    }
+    
     
     /*ACCOMODATION*/
     
