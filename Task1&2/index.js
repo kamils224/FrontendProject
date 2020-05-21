@@ -2,6 +2,7 @@ $(document).ready(function(){
     toggleMenu();
     scrollAnimation();
     contentFadeIn();
+    switchImages();
 })
 
 
@@ -91,4 +92,26 @@ contentFadeIn = function(){
             $('.accomodation-image').fadeIn(delay*2);
         }
     })
+}
+
+
+const images = ["field.jpg", "field2.jpg", "field3.jpg", "field4.jpg"];
+const switchDelay = 5000;
+switchImages = function(){
+    const fadeDelay = 600;
+    var img = $('#fields_background');
+    var i = 1;
+    setInterval(function() {
+        var path = `images/${images[i]}`
+        img.fadeOut(fadeDelay, ()=>{
+            img.attr('src', path);
+            img.fadeIn(fadeDelay);
+        })
+        i = i + 1;
+        if (i == images.length) {
+        i =  0;
+        }
+    }, switchDelay);
+
+
 }
