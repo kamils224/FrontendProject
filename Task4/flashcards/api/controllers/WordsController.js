@@ -64,7 +64,7 @@ module.exports = {
       if(err){
         res.send(500,{error: 'Database Error'});
       }
-      res.redirect('words/list');
+      res.redirect('/words/list');
     });
     return false;
   },
