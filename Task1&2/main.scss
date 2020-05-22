@@ -4,11 +4,13 @@ $title-margin: 5%;
 $px-small: 10px;
 $px-medium: 20px;
 $px-large: 30px;
+$px-xl: 100px;
 $font-huge: 1.6em;
 $font-large: 1.4em;
 $font-med-large: 1.3em;
 $font-medium: 1.2em;
 $font-small: 0.8em;
+$accomodationcolor:rgb(25, 121, 135);
 $academybgcolor: rgb(197, 222, 232);
 $footercolor: rgb(70, 70, 70);
 $top-height-value: 330px;
@@ -39,11 +41,13 @@ p {
 }
 
 .container{
+    position: relative;
     max-width: 1000px;
     width: auto;
     margin: 0 auto;
     padding: 0;
     overflow: auto;
+    z-index: 10;
 }
 .contact-container{
     max-width: 1100px;
@@ -114,6 +118,12 @@ p {
 .mt-large{
     margin-top: $px-large;
 }
+.mt-xl{
+    margin-top: $px-xl;
+}
+.mt-xxl{
+    margin-top: $px-xl*2;
+}
 .font-large p{
     font-size: $font-large;
 }
@@ -134,7 +144,9 @@ p {
 .padding-large{
     padding: $px-large;
 }
-
+.padding-top-xl{
+    padding-top: $px-xl;
+}
 /*NAVIGATION*/
 #top_page{
     height: auto;
@@ -160,7 +172,6 @@ p {
     text-align: center;
     font-size: $font-large;
     color: $text-dark-color;
-    z-index: -1;
 }
 
 .menu-items li:first-child{
@@ -184,12 +195,18 @@ p {
 
 /*MENU*/
 #menu_page{
+    position: relative;
     width: 100%;
     height:auto;
     min-height: $section-min-height;
     background: url("images/golf_main.jpg") no-repeat center;
     background-size: cover;
     clear: both;
+    z-index: 0;
+}
+
+.menu-clip-left {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 20%);
 }
 
 .secondary-navigation{
@@ -233,6 +250,8 @@ p {
     background: white;
     clear: both;
     min-height: 1000px;
+    position: relative;
+    z-index: 5;
 }
 
 
@@ -278,29 +297,29 @@ p {
     min-height: 1000px;
     clear: both;
     margin-top: 0;
-    z-index: -10;
+    z-index: 0;
 }
 
 .schedule-content{
     padding-top: 100px;
 }
 
-.schedule-overlay-red{
+.overlay-red-transparent{
     position: absolute;
     left: 0px;
     top: 0px;
     height: 115%;
 	width: 100%;
-    z-index: -2;
+    z-index: 2;
     background: rgba(255, 0, 0, 0.3);
 }
-.schedule-overlay-white{
+.overlay-white{
     position: absolute;
     left: 0px;
     top: 0px;
     height: 115%;
 	width: 100%;
-    z-index: -3;
+    z-index: 1;
     background: white;
 }
 
@@ -346,14 +365,22 @@ p {
 /*DESCRIPTION*/
 
 #description{
+    position: relative;
     min-height: 450px;
+    z-index: 0;
 }
 
 /*ACCOMODATION*/
 
 #accommodation{
-    min-height: 1080px;
-    background-color: rgb(25, 121, 135);
+    position: relative;
+    min-height: 1200px;
+    background-color: $accomodationcolor;
+    z-index: 0;
+}
+
+.accomodation-clip-right {
+    clip-path: polygon(0 0, 100% 0, 100% 10%, 0 0);
 }
 
 .content-list{
@@ -367,8 +394,24 @@ p {
 
 /*ACADEMY*/
 #academy{
-    min-height: 1000px;
+    position: relative;
+    z-index: 0;
+    min-height: 1150px;
     background-color: $academybgcolor;
+}
+
+.overlay-academy{
+    position: absolute;
+    left: 0px;
+    top: -5px;
+    height: 100%;
+	width: 100%;
+    z-index: 1;
+    background: $accomodationcolor;
+}
+
+.academy-clip-right {
+    clip-path: polygon(0 0, 100% 0, 100% 15%, 0 1%);
 }
 
 .grid-table-3{
@@ -393,17 +436,47 @@ p {
 }
 
 #field_image{
+    position: relative;
     margin-top: -350px;
+    z-index: 0;
 }
 
 /*ABC GOLFA*/
 #abc_golfa{
+    position: relative;
+    z-index: 0;
     background: url("images/abc_image.jpg") no-repeat center;
     background-size: cover;
     clear: both;
     margin-top: 7%;
-    min-height: 800px;
+    min-height: 900px;
     width: 100%;
+}
+.overlay-abc-white{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+	width: 100%;
+    z-index: 1;
+    background: white;
+}
+
+.overlay-abc{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 115%;
+	width: 100%;
+    z-index: 2;
+    background: rgba(54, 133, 120, 0.5);
+}
+
+.abc-clip-left {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 75%);
+}
+.abc-clip-right {
+    clip-path: polygon(0 0, 100% 0, 100% 15%, 0 5%);
 }
 
 .description-text p{
@@ -413,6 +486,7 @@ p {
 /*CONTACT*/
 #contact{
     min-height: 850px;
+    margin-top: 5%;
     margin-bottom: 5%;
 }
 
@@ -499,6 +573,7 @@ p {
         font-size: $font-huge;
         cursor: pointer;
         position: relative;
+        z-index: 10;
     }
     
     .secondary-navigation{
@@ -536,6 +611,10 @@ p {
         margin-left: 0;
         margin-right: 0;
     }
+
+    .menu-clip-left {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 10%);
+    }
     
     
     /*NEWS*/
@@ -558,10 +637,10 @@ p {
 
     /*SCHEDULE*/
 
-    .schedule-overlay-red{
+    .overlay-red-transparent{
         height: 105%;
     }
-    .schedule-overlay-white{
+    .overlay-white{
         height: 100%;
 
     }
@@ -587,6 +666,10 @@ p {
     .description-text p{
         margin-left: 2%;    
         margin-right: 2%;    
+    }
+
+    .accomodation-clip-right {
+        clip-path: polygon(0 0, 100% 0, 100% 5%, 0 0);
     }
     
     /*ACADEMY*/
