@@ -205,8 +205,33 @@ p {
     z-index: 0;
 }
 
+.calendar{
+    position: absolute;
+    left: 60%;
+    top: 3%;
+    height: 300px;
+	width: 300px;
+    z-index: 5;
+    background: $accomodationcolor
+}
+
+.calendar-clip{
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+}
+
+.calendar-content{
+    margin: 10%;
+    font-size: $font-medium;
+}
+
+.calendar-line{
+    border-bottom: 1px solid white;
+    margin: 5% -5%;
+}
+
+
 .menu-clip-left {
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 20%);
+    clip-path: polygon(0 0, 100% 0, 100% 5%, 0 25%);
 }
 
 .secondary-navigation{
@@ -249,7 +274,7 @@ p {
     height:auto;
     background: white;
     clear: both;
-    min-height: 1000px;
+    min-height: 800px;
     position: relative;
     z-index: 5;
 }
@@ -538,6 +563,10 @@ p {
         max-width: 100%;
     }
     
+    .calendar{
+        display: none;
+    }
+
     /*NAVIGATION*/
     #main_navigation{
         position: fixed;
