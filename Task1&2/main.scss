@@ -229,6 +229,42 @@ p {
     margin: 5% -5%;
 }
 
+.calendar-inline > p,i{
+    display: inline-block;
+    margin-right: $px-small;
+}
+
+.calendar-font-xl{
+    font-size: $font-huge;
+}
+
+.calendar-font-l{
+    font-size: $font-large;
+}
+
+.calendar-font-m{
+    font-size: $font-medium;
+}
+.calendar-font-s{
+    font-size: $font-small;
+}
+
+.calendar-list li{
+    display: inline-block;
+    font-size: $font-small;
+    text-align: center;
+    
+}
+
+.calendar-list p{
+    display: block;
+    margin-bottom: $px-medium;
+    font-size: $font-small;
+}
+
+.calendar-list li:not(:last-child){
+    margin-right: 2px;
+}
 
 .menu-clip-left {
     clip-path: polygon(0 0, 100% 0, 100% 5%, 0 25%);
