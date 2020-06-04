@@ -18,7 +18,7 @@ toggleMenu = function(){
             $('#main_navigation').animate({top:topValue},500);
             hideMenu = true;
         }else{
-            $('#main_navigation').animate({top: showMenuHeight},700);
+            $('#main_navigation').animate({top: showMenuHeight},800);
             hideMenu = false;
         }
     })
